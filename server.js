@@ -7,11 +7,14 @@ const { animals } = require("./data/animals");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// middleware for posting data from client to server
+// **middleware start for posting data from client to server
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+// instruct the server to make public files available
+app.use(express.static('public'));
+// **middleware end
 
 function filterByQuery(query, animalsArray) {
   let personalityTraitsArray = [];
@@ -77,6 +80,7 @@ function validateAnimal(animal) {
   return true;
 };
 
+// routes start
 app.get("/api/animals", (req, res) => {
   let results = animals;
   if (req.query) {
@@ -107,7 +111,27 @@ app.post('/api/animals', (req, res) => {
   }
 });
 
+// '/' route points to the root route of the server (homepage)
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
 
+// route for animals page
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+
+// route for zookeeper's page
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+// routes end
+
+// this must be last
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });

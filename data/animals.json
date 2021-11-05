@@ -135,6 +135,37 @@
         "hungry"
       ],
       "id": "13"
+    },
+    {
+      "name": "London",
+      "species": "dog",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "hungry",
+        "loving",
+        "goofy"
+      ],
+      "id": "14"
+    },
+    {
+      "name": "Morris",
+      "species": "cat",
+      "diet": "piscivore",
+      "personalityTraits": [
+        "hungry",
+        "zany",
+        "anxious"
+      ],
+      "id": "15"
+    },
+    {
+      "name": "Sheila",
+      "species": "snake",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "zany"
+      ],
+      "id": "16"
     }
   ]
 }
