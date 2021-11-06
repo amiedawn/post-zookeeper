@@ -1,24 +1,19 @@
 {
-  "name": "post-zookeeper",
+  "name": "main",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amiedawn/post-zookeeper.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amiedawn/post-zookeeper/issues"
-  },
-  "homepage": "https://github.com/amiedawn/post-zookeeper#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
